@@ -1,0 +1,27 @@
+lib/
+├── core/                      # کدهای عمومی و ابزارها
+│   ├── errors/                # مدیریت خطاها
+│   ├── network/               # کلاس‌ها و ابزارهای ارتباط شبکه (API client، interceptor و...)
+│   ├── database/              # کلاس‌های پایه دیتابیس محلی (مثلا SQLite)
+│   ├── utils/                 # توابع کمکی، extensionها
+│   └── theme/                 # تم پروژه (colors, text styles, theme data)
+│
+├── data/                      # لایه دیتای پروژه (repository implementation و data source ها)
+│   ├── models/                # مدل‌هایی که مستقیم از API یا دیتابیس میاد (DTO)
+│   ├── datasources/
+│   │    ├── remote/           # ارتباط با سرور (API client)
+│   │    └── local/            # دیتابیس داخلی (مثلا SQLite, SharedPreferences)
+│   ├── repositories/          # پیاده‌سازی repository ها که از data source استفاده می‌کنند
+│
+├── domain/                    # لایه دامنه (business logic و انتزاع‌ها)
+│   ├── entities/              # مدل‌های دامنه (Entity ها)
+│   ├── repositories/          # تعریف interface های repository (abstract class)
+│   ├── usecases/              # use case ها (مثلا AddTodo, GetTodos, DeleteTodo)
+│
+├── presentation/              # لایه نمایش و state management
+│   ├── providers/             # Riverpod providers برای state ها و viewmodel ها
+│   ├── viewmodels/            # کلاس‌های ViewModel (business logic برای UI)
+│   ├── views/                 # ویجت‌های صفحه‌ها و کامپوننت‌ها (screens)
+│   ├── widgets/               # ویجت‌های کوچک و قابل استفاده مجدد
+│
+└── main.dart                  # نقطه ورود برنامه
